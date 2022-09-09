@@ -11,6 +11,7 @@ import E1 from "./assets/bass-samples/e2.wav";
 function App() {
   // Names of each sharp bass note
   const sharpBassStrings = [
+    // EB move to to a constants.js file and rename to SHARP_BASS_STRINGS
     ["G#1", "G1", "F#1", "F1", "E1"],
     ["C#2", "C2", "B1", "A#1", "A1"],
     ["F#2", "F2", "E2", "D#2", "D2"],
@@ -19,6 +20,8 @@ function App() {
 
   // Names of each flat bass note
   const flatBassStrings = [
+    // EB also  move  to a constants.js file and rename to FLAT_BASS_STRINGS
+
     ["Ab1", "G1", "Gb1", "F1", "E1"],
     ["Db2", "C2", "B1", "Bb1", "A1"],
     ["Gb2", "F2", "E2", "Eb2", "D2"],
@@ -27,6 +30,7 @@ function App() {
 
   // Default to flat bass notes when page is first visited
   const [isFlat, setIsFlat] = useState(true);
+  // EB move all the useStates to top of function
 
   // Determines which set of notes (flats/sharps) to use according to the isFlat state
   const allNotes = [].concat.apply(
@@ -66,6 +70,7 @@ function App() {
   };
 
   useEffect(() => {
+    // EB move to top of function after the use state functions
     newNoteHandler();
     setCurrentNote("");
   }, [isFlat]);
@@ -74,8 +79,8 @@ function App() {
   const changeAccidental = () => setIsFlat((accidental) => !accidental);
 
   return (
-    <div className='wrapper'>
-      <h1 className='title'>Note Tutor - Bass Guitar</h1>
+    <div className="wrapper">
+      <h1 className="title">Note Tutor - Bass Guitar</h1>
 
       <Quiz
         currentNote={currentNote}

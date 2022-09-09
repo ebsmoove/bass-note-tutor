@@ -2,6 +2,7 @@ import Vex from "vexflow";
 import "./App.css";
 
 export default function findBassClefNote(letter, id, isCorrect = false) {
+  //EB move to a utils folder
   const VF = Vex.Flow;
 
   // Create an SVG renderer and attach it to the DIV element named "boo".
